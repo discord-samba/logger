@@ -1,0 +1,50 @@
+{
+  "name": "@discord-sambo/logger",
+  "version": "0.1.0",
+  "description": "Logger module for Discord-Sambo",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "gulp && jest --passWithNoTests",
+    "docs": "typedoc --mode file --module commonjs --theme minimal --exclude \"./**/+(node_modules|__test__|)/**/*.ts\" --out docs/ src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/discord-sambo/logger.git"
+  },
+  "author": "Zack Campbell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/discord-sambo/logger/issues"
+  },
+  "homepage": "https://github.com/discord-sambo/logger#readme",
+  "devDependencies": {
+    "@discord-sambo/eslint-config": "discord-sambo/eslint-config",
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.8",
+    "@typescript-eslint/eslint-plugin": "^2.4.0",
+    "@typescript-eslint/parser": "^2.4.0",
+    "del": "^5.1.0",
+    "eslint": "^6.5.1",
+    "gulp": "^4.0.2",
+    "gulp-eslint": "^6.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-typescript": "^5.0.1",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "typedoc": "^0.15.0",
+    "typescript": "^3.7.0-beta"
+  },
+  "eslintConfig": {
+    "extends": "@discord-sambo"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "/__test__/.+\\.test\\.ts$",
+    "verbose": true
+  }
+}
