@@ -1,4 +1,3 @@
-import { DefaultTransport } from './transports/DefaultTransport';
 import { LogLevel } from './types/LogLevel';
 import { LoggerCacheKeys } from './types/LoggerCacheKeys';
 import { LoggerTransport } from './LoggerTransport';
@@ -21,9 +20,6 @@ export class LoggerCache
 		// Set the default log level
 		this._cache.set(LoggerCacheKeys.LogLevel, LogLevel.DEBUG);
 
-		// Set the default transport
-		this._transports.set(LoggerCacheKeys.DefaultTransport, new DefaultTransport());
-
 		LoggerCache._staticInstance = this;
 	}
 
@@ -32,10 +28,7 @@ export class LoggerCache
 	 */
 	public static get instance(): LoggerCache
 	{
-		// // return LoggerCache._staticInstance ?? new LoggerCache();
-		return typeof LoggerCache._staticInstance !== 'undefined'
-			? LoggerCache._staticInstance
-			: new LoggerCache();
+		return LoggerCache._staticInstance ?? new LoggerCache();
 	}
 
 	/**
@@ -80,11 +73,12 @@ export class LoggerCache
 	}
 
 	/**
-	 * Gets a value from the LoggerCache
+	 * Gets a value from the LoggerCache, or default to the given fallback value
+	 * if there is no value cached for the given key
 	 */
-	public static get(key: string): any
+	public static get(key: string, fallback?: any): any
 	{
-		return LoggerCache.instance._cache.get(key);
+		return LoggerCache.instance._cache.get(key) ?? fallback;
 	}
 
 	/**

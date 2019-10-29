@@ -14,9 +14,7 @@ export abstract class LoggerTransport
 
 	public get level(): LogLevel
 	{
-		return typeof this._level !== 'undefined'
-			? this._level
-			: LoggerCache.get(LoggerCacheKeys.LogLevel);
+		return this._level ?? LoggerCache.get(LoggerCacheKeys.LogLevel);
 	}
 
 	public abstract transport(data: LoggerTransportData): void | Promise<void>;
