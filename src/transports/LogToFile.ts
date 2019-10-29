@@ -12,7 +12,7 @@ import { LoggerTransportData } from '../types/LoggerTransportData';
  * Can be given a log level which will override the globally configured
  * log level
  */
-export class FileLoggingTransport extends LoggerTransport
+export class LogToFile extends LoggerTransport
 {
 	private readonly _logDir: string;
 	private readonly _keepDays: number;
@@ -43,10 +43,10 @@ export class FileLoggingTransport extends LoggerTransport
 	{
 		const date: Date = new Date(time);
 		const y: string = date.getFullYear().toString();
-		const d: string = FileLoggingTransport._zeroPad(date.getDate());
+		const d: string = LogToFile._zeroPad(date.getDate());
 
 		// Add 1 because month is 0-indexed
-		const m: string = FileLoggingTransport._zeroPad(date.getMonth() + 1);
+		const m: string = LogToFile._zeroPad(date.getMonth() + 1);
 
 		return `${y}-${m}-${d}`;
 	}
@@ -57,10 +57,10 @@ export class FileLoggingTransport extends LoggerTransport
 	 */
 	private static _parseDateStr(date: string): number
 	{
-		if (!FileLoggingTransport._logFileDateRegex.test(date))
+		if (!LogToFile._logFileDateRegex.test(date))
 			throw new TypeError('Invalid date string');
 
-		const match: RegExpMatchArray = date.match(FileLoggingTransport._logFileDateRegex)!;
+		const match: RegExpMatchArray = date.match(LogToFile._logFileDateRegex)!;
 		const y: number = parseInt(match[1]);
 		const d: number = parseInt(match[3]);
 
@@ -102,9 +102,9 @@ export class FileLoggingTransport extends LoggerTransport
 		if (typeof this._fileDescriptor !== 'undefined')
 			FS.closeSync(this._fileDescriptor);
 
-		this._currentDate = FileLoggingTransport._roundTime(Date.now());
+		this._currentDate = LogToFile._roundTime(Date.now());
 
-		const fileName: string = `${FileLoggingTransport._createDateStr(this._currentDate)}.log`;
+		const fileName: string = `${LogToFile._createDateStr(this._currentDate)}.log`;
 		this._fileDescriptor = FS.openSync(Path.join(this._logDir, fileName), 'a+');
 
 		this._cleanup();
@@ -119,12 +119,12 @@ export class FileLoggingTransport extends LoggerTransport
 		const files: string[] = FS.readdirSync(this._logDir);
 		for (const file of files)
 		{
-			if (!FileLoggingTransport._logFileRegex.test(file))
+			if (!LogToFile._logFileRegex.test(file))
 				continue;
 
-			const fileTime: number = FileLoggingTransport._parseDateStr(file);
-			const keepDuration: number = FileLoggingTransport._oneDay * this._keepDays;
-			const cutoff: number = FileLoggingTransport._roundTime(Date.now()) - keepDuration;
+			const fileTime: number = LogToFile._parseDateStr(file);
+			const keepDuration: number = LogToFile._oneDay * this._keepDays;
+			const cutoff: number = LogToFile._roundTime(Date.now()) - keepDuration;
 
 			if (fileTime < cutoff)
 			{
@@ -143,22 +143,22 @@ export class FileLoggingTransport extends LoggerTransport
 			return '';
 
 		const shardVal: number = LoggerCache.get(LoggerCacheKeys.Shard);
-		const shardStr: string = shardVal < 10 ? FileLoggingTransport._zeroPad(shardVal) : shardVal.toString();
+		const shardStr: string = shardVal < 10 ? LogToFile._zeroPad(shardVal) : shardVal.toString();
 		const shardTag: string = `[SHARD_${shardStr}]`;
 		return shardTag;
 	}
 
 	public async transport(data: LoggerTransportData): Promise<void>
 	{
-		if (this._currentDate < FileLoggingTransport._roundTime(Date.now()))
+		if (this._currentDate < LogToFile._roundTime(Date.now()))
 			this._newLog();
 
 		let { tag } = data;
 		const { type, text } = data;
 		const d: Date = data.timestamp;
-		const h: string = FileLoggingTransport._zeroPad(d.getHours());
-		const m: string = FileLoggingTransport._zeroPad(d.getMinutes());
-		const s: string = FileLoggingTransport._zeroPad(d.getSeconds());
+		const h: string = LogToFile._zeroPad(d.getHours());
+		const m: string = LogToFile._zeroPad(d.getMinutes());
+		const s: string = LogToFile._zeroPad(d.getSeconds());
 		const t: string = `${h}:${m}:${s}`;
 
 		// Set the highest type width we've encountered so far
@@ -176,7 +176,7 @@ export class FileLoggingTransport extends LoggerTransport
 
 		FS.appendFileSync(
 			this._fileDescriptor,
-			`[${t}]${FileLoggingTransport._shard()}[${wrappedType}][${tag}]: ${text}\n`
+			`[${t}]${LogToFile._shard()}[${wrappedType}][${tag}]: ${text}\n`
 		);
 	}
 }
