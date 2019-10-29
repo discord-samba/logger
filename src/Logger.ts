@@ -1,3 +1,4 @@
+import { DefaultTransport } from './transports/DefaultTransport';
 import { LogLevel } from './types/LogLevel';
 import { LogType } from './types/LogType';
 import { LoggerCache } from './LoggerCache';
@@ -13,7 +14,8 @@ export class Logger
 
 	/**
 	 * Add a logger transport to the cache. Will be used whenever a logging
-	 * method is called
+	 * method is called. Key must be a string to identify the given transport
+	 * so that it may be removed if desired
 	 */
 	public static addTransport(key: string, transport: LoggerTransport): void
 	{
@@ -21,7 +23,31 @@ export class Logger
 	}
 
 	/**
-	 * Removes the default Logger transport
+	 * Removes the transport with the given key from the cache
+	 */
+	public static removeTransport(key: string): void
+	{
+		LoggerCache.removeTransport(key);
+	}
+
+	/**
+	 * Adds the default transport to the cache. This must be called if you want
+	 * to use the logger without providing your own transports, otherwise nothing
+	 * will happen when you call the logger methods.
+	 *
+	 * You could call this conditionally to turn Logging on or off, but the preferred
+	 * method for turning off logging would be `Logger.setLogLevel(LogLevel.NONE)`
+	 *
+	 * You can optionally provide a log level which will cause the default transport
+	 * to override the globally configured log level
+	 */
+	public static addDefaultTransport(level?: LogLevel): void
+	{
+		LoggerCache.addTransport(LoggerCacheKeys.DefaultTransport, new DefaultTransport(level));
+	}
+
+	/**
+	 * Removes the default Logger transport from the logger cache
 	 */
 	public static removeDefaultTransport(): void
 	{
