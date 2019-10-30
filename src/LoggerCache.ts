@@ -56,12 +56,11 @@ export class LoggerCache
 	}
 
 	/**
-	 * Returns an array of all cached Transports
+	 * Returns an iterator of all cached Transports
 	 */
-	public static getTransports(): LoggerTransport[]
+	public static transports(): Iterable<LoggerTransport>
 	{
-		return Array.from(LoggerCache.instance._transports.keys())
-			.map(k => LoggerCache.instance._transports.get(k)!);
+		return LoggerCache.instance._transports.values();
 	}
 
 	/**
