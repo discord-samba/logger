@@ -81,7 +81,6 @@ export class Logger
 			{
 				switch (key)
 				{
-					case 'log':
 					case 'info':
 					case 'warn':
 					case 'error':
@@ -133,7 +132,7 @@ export class Logger
 	private static _write(level: LogLevel, type: LogType, tag: string, text: any[]): void
 	{
 		const timestamp: Date = new Date();
-		for (const transport of LoggerCache.getTransports())
+		for (const transport of LoggerCache.transports())
 			if (level <= transport.level)
 				transport.transport({ timestamp, type, tag, text: text.join(' ') });
 	}
