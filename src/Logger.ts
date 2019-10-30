@@ -96,14 +96,6 @@ export class Logger
 	}
 
 	/**
-	 * Log to all cached transports if the log level is >= LogLevel.LOG
-	 */
-	public static log(tag: string, ...text: any[]): void
-	{
-		Logger._write(LogLevel.LOG, LogType.LOG, tag, text);
-	}
-
-	/**
 	 * Log to all cached transports if the log level is >= LogLevel.INFO
 	 */
 	public static info(tag: string, ...text: any[]): void

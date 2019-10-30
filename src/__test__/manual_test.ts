@@ -5,14 +5,15 @@ import { Logger } from '../Logger';
 import { logger } from '../LoggerDecorator';
 
 Logger.addDefaultTransport();
-Logger.addTransport('fileLogger', new LogToFile(Path.join(__dirname, '../..', 'logs'), 7, LogLevel.LOG));
+Logger.addTransport('fileLogger', new LogToFile(Path.join(__dirname, '../..', 'logs'), 7, LogLevel.INFO));
 
 const taggedLogger: typeof Logger = Logger.tag('foo');
 Logger.setShard(1);
 
 Logger.debug('VeryLongTagName', 'foo bar baz');
-Logger.log('Short', 'foo bar baz');
+Logger.info('Short', 'foo bar baz');
 
+taggedLogger.warn('Foo Bar Baz');
 taggedLogger.error('Foo Bar Baz');
 
 class TestClass
@@ -22,9 +23,9 @@ class TestClass
 
 	public constructor()
 	{
-		this._logger.log('I\'m being constructed');
+		this._logger.info('I\'m being constructed');
 	}
 }
 
 const test: TestClass = new TestClass();
-taggedLogger.log('bar', test as any);
+taggedLogger.info('bar', test as any);
