@@ -5,7 +5,7 @@ import { LoggerTransport } from '../LoggerTransport';
 import { LoggerTransportData } from '../types/LoggerTransportData';
 
 type Color = [number, number];
-type Colors = 'red' | 'green' | 'yellow' | 'blue' | 'magenta' | 'cyan' | 'grey';
+type Colors = 'red' | 'green' | 'yellow' | 'magenta' | 'cyan' | 'grey';
 type ColorWrapper = (text: string) => string;
 
 export class DefaultTransport extends LoggerTransport
@@ -14,15 +14,13 @@ export class DefaultTransport extends LoggerTransport
 		red: [31, 39],
 		green: [32, 39],
 		yellow: [33, 39],
-		blue: [34, 39],
 		magenta: [35, 39],
 		cyan: [36, 39],
 		grey: [90, 39]
 	};
 
 	private static readonly _typeColorWrappers: { [type: string]: ColorWrapper } = {
-		[LogType.LOG]: DefaultTransport._createWrapper(DefaultTransport._colors.green),
-		[LogType.INFO]: DefaultTransport._createWrapper(DefaultTransport._colors.blue),
+		[LogType.INFO]: DefaultTransport._createWrapper(DefaultTransport._colors.green),
 		[LogType.WARN]: DefaultTransport._createWrapper(DefaultTransport._colors.yellow),
 		[LogType.ERROR]: DefaultTransport._createWrapper(DefaultTransport._colors.red),
 		[LogType.DEBUG]: DefaultTransport._createWrapper(DefaultTransport._colors.magenta)
