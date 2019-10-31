@@ -1,11 +1,11 @@
 import * as Path from 'path';
+import { LogFileTransport } from '../transports/LogFileTransport';
 import { LogLevel } from '../types/LogLevel';
-import { LogToFile } from '../transports/LogToFile';
 import { Logger } from '../Logger';
 import { logger } from '../LoggerDecorator';
 
 Logger.addDefaultTransport();
-Logger.addTransport('fileLogger', new LogToFile(Path.join(__dirname, '../..', 'logs'), 7, LogLevel.INFO));
+Logger.addTransport('fileLogger', new LogFileTransport(Path.join(__dirname, '../..', 'logs'), 7, LogLevel.INFO));
 
 const taggedLogger: typeof Logger = Logger.tag('foo');
 Logger.setShard(1);
