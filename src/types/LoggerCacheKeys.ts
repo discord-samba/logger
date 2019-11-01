@@ -1,3 +1,6 @@
+/**
+ * @private
+ */
 export enum LoggerCacheKeys
 {
 	LogLevel = '__logLevel',

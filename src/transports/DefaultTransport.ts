@@ -8,6 +8,9 @@ type Color = [number, number];
 type Colors = 'red' | 'green' | 'yellow' | 'magenta' | 'cyan' | 'grey';
 type ColorWrapper = (text: string) => string;
 
+/**
+ * @private
+ */
 export class DefaultTransport extends LoggerTransport
 {
 	private static readonly _colors: { [key in Colors]: Color } = {

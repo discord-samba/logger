@@ -2,6 +2,9 @@ import { LogLevel } from './types/LogLevel';
 import { LoggerCacheKeys } from './types/LoggerCacheKeys';
 import { LoggerTransport } from './LoggerTransport';
 
+/**
+ * @private
+ */
 export class LoggerCache
 {
 	private static _staticInstance: LoggerCache;
