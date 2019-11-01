@@ -31,4 +31,18 @@ gulp.task('build', () =>
 		.pipe(gulp.dest('bin/'));
 });
 
+gulp.task('gh-prebuild-prepare', cb => {
+	del.sync([
+		'../indev-build/**',
+		'../indev-build/.*',
+		'!../indev-build',
+		'!../indev-build/.git',
+		'!../indev-build/.git/**'
+	], { force: true });
+	gulp.src('bin/**/*.*').pipe(gulp.dest('../indev-build/bin'));
+	gulp.src('package.json').pipe(gulp.dest('../indev-build'));
+
+	return cb();
+});
+
 gulp.task('default', gulp.series('lint', 'build'));
