@@ -3,7 +3,13 @@ import { LoggerCacheKeys } from './types/LoggerCacheKeys';
 import { LoggerTransport } from './LoggerTransport';
 
 /**
- * @private
+ * Cache singleton that can be used for caching logging related metadata
+ * from within your custom logger transports. Avoid using keys beginning
+ * with `__` (That's two (2) underscores) as any base transports use those
+ * keys for their metadata and you wouldn't want to overwrite those.
+ *
+ * All methods are static and will automatically use/create the singleton
+ * instance. You do not ever need to instantiate this class.
  */
 export class LoggerCache
 {
@@ -29,7 +35,7 @@ export class LoggerCache
 	/**
 	 * The LoggerCache instance
 	 */
-	public static get instance(): LoggerCache
+	private static get _instance(): LoggerCache
 	{
 		return LoggerCache._staticInstance ?? new LoggerCache();
 	}
@@ -39,7 +45,7 @@ export class LoggerCache
 	 */
 	public static addTransport(key: string, transport: LoggerTransport): void
 	{
-		LoggerCache.instance._transports.set(key, transport);
+		LoggerCache._instance._transports.set(key, transport);
 	}
 
 	/**
@@ -47,7 +53,7 @@ export class LoggerCache
 	 */
 	public static removeTransport(key: string): void
 	{
-		LoggerCache.instance._transports.delete(key);
+		LoggerCache._instance._transports.delete(key);
 	}
 
 	/**
@@ -55,7 +61,7 @@ export class LoggerCache
 	 */
 	public static removeDefaultTransport(): void
 	{
-		LoggerCache.instance._transports.delete(LoggerCacheKeys.DefaultTransport);
+		LoggerCache._instance._transports.delete(LoggerCacheKeys.DefaultTransport);
 	}
 
 	/**
@@ -63,7 +69,7 @@ export class LoggerCache
 	 */
 	public static transports(): Iterable<LoggerTransport>
 	{
-		return LoggerCache.instance._transports.values();
+		return LoggerCache._instance._transports.values();
 	}
 
 	/**
@@ -71,7 +77,7 @@ export class LoggerCache
 	 */
 	public static has(key: string): boolean
 	{
-		return typeof LoggerCache.instance._cache.get(key) !== 'undefined';
+		return typeof LoggerCache._instance._cache.get(key) !== 'undefined';
 	}
 
 	/**
@@ -80,7 +86,7 @@ export class LoggerCache
 	 */
 	public static get(key: string, fallback?: any): any
 	{
-		return LoggerCache.instance._cache.get(key) ?? fallback;
+		return LoggerCache._instance._cache.get(key) ?? fallback;
 	}
 
 	/**
@@ -88,7 +94,7 @@ export class LoggerCache
 	 */
 	public static set(key: string, value: any): void
 	{
-		LoggerCache.instance._cache.set(key, value);
+		LoggerCache._instance._cache.set(key, value);
 	}
 
 	/**
@@ -96,6 +102,6 @@ export class LoggerCache
 	 */
 	public static remove(key: string): void
 	{
-		LoggerCache.instance._cache.delete(key);
+		LoggerCache._instance._cache.delete(key);
 	}
 }
