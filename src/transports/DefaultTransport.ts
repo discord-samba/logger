@@ -4,8 +4,13 @@ import { LoggerCacheKeys } from '../types/LoggerCacheKeys';
 import { LoggerTransport } from '../LoggerTransport';
 import { LoggerTransportData } from '../types/LoggerTransportData';
 
+/** @private */
 type Color = [number, number];
+
+/** @private */
 type Colors = 'red' | 'green' | 'yellow' | 'magenta' | 'cyan' | 'grey';
+
+/** @private */
 type ColorWrapper = (text: string) => string;
 
 /**
