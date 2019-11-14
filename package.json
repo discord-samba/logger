@@ -31,8 +31,8 @@
 		"jest": "^24.9.0",
 		"madge": "^3.5.0",
 		"ts-jest": "^24.1.0",
-		"typedoc": "^0.15.0",
-		"typescript": "^3.7.1-rc"
+		"typedoc": "^0.15.1",
+		"typescript": "^3.7.2"
 	},
 	"eslintConfig": {
 		"extends": "@discord-sambo"
