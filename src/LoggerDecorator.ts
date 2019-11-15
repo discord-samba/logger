@@ -10,7 +10,7 @@ export function logger<T>(target: T, key: string): void;
  * Example:
  * ```
  * class FooClass {
- * 	&#64logger // Logging methods will be tagged with `FooClass`
+ * 	@logger // Logging methods will be tagged with `FooClass`
  * 	private readonly logger: typeof Logger;
  * 	...
  * ```
@@ -21,7 +21,7 @@ export function logger<T>(target: T, key: string): void;
  * Example:
  * ```
  * class FooClass {
- * 	&#64logger('Bar') // Logging methods will be tagged with `Bar`
+ * 	@logger('Bar') // Logging methods will be tagged with `Bar`
  * 	private readonly logger: typeof Logger;
  * 	...
  * ```
