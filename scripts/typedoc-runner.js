@@ -23,11 +23,11 @@ if (typeof project !== 'undefined')
 		[
 			{
 				label: 'Command',
-				url: 'https://discord-sambo.github.io/command'
+				url: 'https://discord-sambo.github.io/command/docs'
 			},
 			{
 				label: 'Localization',
-				url: 'https://discord-sambo.github.io/localization'
+				url: 'https://discord-sambo.github.io/localization/docs'
 			}
 		]
 	);
