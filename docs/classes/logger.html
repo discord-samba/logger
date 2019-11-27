@@ -2389,15 +2389,6 @@ img {
 		<li class=" tsd-kind-enum">
 			<a href="../enums/loglevel.html" class="tsd-kind-icon">Log<wbr>Level</a>
 		</li>
-		<li class=" tsd-kind-enum tsd-is-private">
-			<a href="../enums/logtype.html" class="tsd-kind-icon">Log<wbr>Type</a>
-		</li>
-		<li class=" tsd-kind-enum tsd-is-private">
-			<a href="../enums/loggercachekeys.html" class="tsd-kind-icon">Logger<wbr>Cache<wbr>Keys</a>
-		</li>
-		<li class=" tsd-kind-class tsd-is-private">
-			<a href="defaulttransport.html" class="tsd-kind-icon">Default<wbr>Transport</a>
-		</li>
 		<li class=" tsd-kind-class">
 			<a href="logfiletransport.html" class="tsd-kind-icon">Log<wbr>File<wbr>Transport</a>
 		</li>
@@ -2406,9 +2397,6 @@ img {
 			<ul>
 				<li class=" tsd-kind-constructor tsd-parent-kind-class">
 					<a href="logger.html#constructor" class="tsd-kind-icon">constructor</a>
-				</li>
-				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-					<a href="logger.html#_write" class="tsd-kind-icon">_write</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
 					<a href="logger.html#adddefaulttransport" class="tsd-kind-icon">add<wbr>Default<wbr>Transport</a>
@@ -2454,15 +2442,6 @@ img {
 		<li class=" tsd-kind-interface">
 			<a href="../interfaces/loggertransportdata.html" class="tsd-kind-icon">Logger<wbr>Transport<wbr>Data</a>
 		</li>
-		<li class=" tsd-kind-type-alias tsd-is-private tsd-is-not-exported">
-			<a href="../globals.html#color" class="tsd-kind-icon">Color</a>
-		</li>
-		<li class=" tsd-kind-type-alias tsd-is-private tsd-is-not-exported">
-			<a href="../globals.html#colorwrapper" class="tsd-kind-icon">Color<wbr>Wrapper</a>
-		</li>
-		<li class=" tsd-kind-type-alias tsd-is-private tsd-is-not-exported">
-			<a href="../globals.html#colors" class="tsd-kind-icon">Colors</a>
-		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter">
 			<a href="../globals.html#logger" class="tsd-kind-icon">logger</a>
 		</li>
@@ -2491,7 +2470,6 @@ img {
 					<section class="tsd-index-section ">
 						<h3>Methods</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="logger.html#_write" class="tsd-kind-icon">_write</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="logger.html#adddefaulttransport" class="tsd-kind-icon">add<wbr>Default<wbr>Transport</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="logger.html#addtransport" class="tsd-kind-icon">add<wbr>Transport</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="logger.html#debug" class="tsd-kind-icon">debug</a></li>
@@ -2520,7 +2498,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/f138183/src/Logger.ts#L9">Logger.ts:9</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L9">Logger.ts:9</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <a href="logger.html" class="tsd-signature-type">Logger</a></h4>
@@ -2530,43 +2508,6 @@ img {
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Methods</h2>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-				<a name="_write" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> _write</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-					<li class="tsd-signature tsd-kind-icon">_write<span class="tsd-signature-symbol">(</span>level<span class="tsd-signature-symbol">: </span><a href="../enums/loglevel.html" class="tsd-signature-type">LogLevel</a>, type<span class="tsd-signature-symbol">: </span><a href="../enums/logtype.html" class="tsd-signature-type">LogType</a>, tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/f138183/src/Logger.ts#L132">Logger.ts:132</a></li>
-							</ul>
-						</aside>
-						<div class="tsd-comment tsd-typography">
-							<div class="lead">
-								<p>Write to all the cached transports</p>
-							</div>
-						</div>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>level: <a href="../enums/loglevel.html" class="tsd-signature-type">LogLevel</a></h5>
-							</li>
-							<li>
-								<h5>type: <a href="../enums/logtype.html" class="tsd-signature-type">LogType</a></h5>
-							</li>
-							<li>
-								<h5>tag: <span class="tsd-signature-type">string</span></h5>
-							</li>
-							<li>
-								<h5>text: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-					</li>
-				</ul>
-			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
 				<a name="adddefaulttransport" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagStatic">Static</span> add<wbr>Default<wbr>Transport</h3>
@@ -2577,7 +2518,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/f138183/src/Logger.ts#L44">Logger.ts:44</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L44">Logger.ts:44</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2611,7 +2552,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/f138183/src/Logger.ts#L20">Logger.ts:20</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L20">Logger.ts:20</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2644,7 +2585,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/f138183/src/Logger.ts#L124">Logger.ts:124</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L124">Logger.ts:124</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2675,7 +2616,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/f138183/src/Logger.ts#L116">Logger.ts:116</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L116">Logger.ts:116</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2706,7 +2647,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/f138183/src/Logger.ts#L100">Logger.ts:100</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L100">Logger.ts:100</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2737,7 +2678,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/f138183/src/Logger.ts#L52">Logger.ts:52</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L52">Logger.ts:52</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2759,7 +2700,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/f138183/src/Logger.ts#L28">Logger.ts:28</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L28">Logger.ts:28</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2787,7 +2728,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/f138183/src/Logger.ts#L60">Logger.ts:60</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L60">Logger.ts:60</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2815,7 +2756,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/f138183/src/Logger.ts#L68">Logger.ts:68</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L68">Logger.ts:68</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2843,7 +2784,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/f138183/src/Logger.ts#L77">Logger.ts:77</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L77">Logger.ts:77</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2872,7 +2813,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/f138183/src/Logger.ts#L108">Logger.ts:108</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L108">Logger.ts:108</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
