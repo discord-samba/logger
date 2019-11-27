@@ -4,18 +4,16 @@ import { LoggerCacheKeys } from '../types/LoggerCacheKeys';
 import { LoggerTransport } from '../LoggerTransport';
 import { LoggerTransportData } from '../types/LoggerTransportData';
 
-/** @private */
+/** @internal */
 type Color = [number, number];
 
-/** @private */
+/** @internal */
 type Colors = 'red' | 'green' | 'yellow' | 'magenta' | 'cyan' | 'grey';
 
-/** @private */
+/** @internal */
 type ColorWrapper = (text: string) => string;
 
-/**
- * @private
- */
+/** @internal */
 export class DefaultTransport extends LoggerTransport
 {
 	private static readonly _colors: { [key in Colors]: Color } = {

@@ -1,6 +1,4 @@
-/**
- * @private
- */
+/** @internal */
 export enum LogType
 {
 	INFO = 'INFO',
