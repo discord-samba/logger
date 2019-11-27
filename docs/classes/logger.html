@@ -2440,7 +2440,22 @@ img {
 			<a href="loggertransport.html" class="tsd-kind-icon">Logger<wbr>Transport</a>
 		</li>
 		<li class=" tsd-kind-interface">
+			<a href="../interfaces/loggableclass.html" class="tsd-kind-icon">Loggable<wbr>Class</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="../interfaces/loggerproxy.html" class="tsd-kind-icon">Logger<wbr>Proxy</a>
+		</li>
+		<li class=" tsd-kind-interface">
 			<a href="../interfaces/loggertransportdata.html" class="tsd-kind-icon">Logger<wbr>Transport<wbr>Data</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="../interfaces/proxyloggable.html" class="tsd-kind-icon">Proxy<wbr>Loggable</a>
+		</li>
+		<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+			<a href="../globals.html#constructable" class="tsd-kind-icon">Constructable</a>
+		</li>
+		<li class=" tsd-kind-function tsd-has-type-parameter">
+			<a href="../globals.html#loggable" class="tsd-kind-icon">Loggable</a>
 		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter">
 			<a href="../globals.html#logger" class="tsd-kind-icon">logger</a>
@@ -2498,7 +2513,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L9">Logger.ts:9</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/5763660/src/Logger.ts#L10">Logger.ts:10</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <a href="logger.html" class="tsd-signature-type">Logger</a></h4>
@@ -2518,7 +2533,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L44">Logger.ts:44</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/5763660/src/Logger.ts#L45">Logger.ts:45</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2552,7 +2567,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L20">Logger.ts:20</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/5763660/src/Logger.ts#L21">Logger.ts:21</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2579,13 +2594,13 @@ img {
 				<a name="debug" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagStatic">Static</span> debug</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<li class="tsd-signature tsd-kind-icon">debug<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, <span class="tsd-signature-symbol">...</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<li class="tsd-signature tsd-kind-icon">debug<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, <span class="tsd-signature-symbol">...</span>rest<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L124">Logger.ts:124</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/5763660/src/Logger.ts#L125">Logger.ts:125</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2599,7 +2614,10 @@ img {
 								<h5>tag: <span class="tsd-signature-type">string</span></h5>
 							</li>
 							<li>
-								<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>text: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								<h5>data: <span class="tsd-signature-type">any</span></h5>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>rest: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -2610,13 +2628,13 @@ img {
 				<a name="error" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagStatic">Static</span> error</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<li class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, <span class="tsd-signature-symbol">...</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<li class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, <span class="tsd-signature-symbol">...</span>rest<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L116">Logger.ts:116</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/5763660/src/Logger.ts#L117">Logger.ts:117</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2630,7 +2648,10 @@ img {
 								<h5>tag: <span class="tsd-signature-type">string</span></h5>
 							</li>
 							<li>
-								<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>text: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								<h5>data: <span class="tsd-signature-type">any</span></h5>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>rest: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -2641,13 +2662,13 @@ img {
 				<a name="info" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagStatic">Static</span> info</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<li class="tsd-signature tsd-kind-icon">info<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, <span class="tsd-signature-symbol">...</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<li class="tsd-signature tsd-kind-icon">info<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, <span class="tsd-signature-symbol">...</span>rest<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L100">Logger.ts:100</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/5763660/src/Logger.ts#L101">Logger.ts:101</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2661,7 +2682,10 @@ img {
 								<h5>tag: <span class="tsd-signature-type">string</span></h5>
 							</li>
 							<li>
-								<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>text: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								<h5>data: <span class="tsd-signature-type">any</span></h5>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>rest: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -2678,7 +2702,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L52">Logger.ts:52</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/5763660/src/Logger.ts#L53">Logger.ts:53</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2700,7 +2724,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L28">Logger.ts:28</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/5763660/src/Logger.ts#L29">Logger.ts:29</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2728,7 +2752,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L60">Logger.ts:60</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/5763660/src/Logger.ts#L61">Logger.ts:61</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2756,7 +2780,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L68">Logger.ts:68</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/5763660/src/Logger.ts#L69">Logger.ts:69</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2778,13 +2802,13 @@ img {
 				<a name="tag" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagStatic">Static</span> tag</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<li class="tsd-signature tsd-kind-icon">tag<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="logger.html" class="tsd-signature-type">Logger</a></li>
+					<li class="tsd-signature tsd-kind-icon">tag<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/loggerproxy.html" class="tsd-signature-type">LoggerProxy</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L77">Logger.ts:77</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/5763660/src/Logger.ts#L78">Logger.ts:78</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2799,7 +2823,7 @@ img {
 								<h5>tag: <span class="tsd-signature-type">string</span></h5>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="logger.html" class="tsd-signature-type">Logger</a></h4>
+						<h4 class="tsd-returns-title">Returns <a href="../interfaces/loggerproxy.html" class="tsd-signature-type">LoggerProxy</a></h4>
 					</li>
 				</ul>
 			</section>
@@ -2807,13 +2831,13 @@ img {
 				<a name="warn" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagStatic">Static</span> warn</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<li class="tsd-signature tsd-kind-icon">warn<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, <span class="tsd-signature-symbol">...</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<li class="tsd-signature tsd-kind-icon">warn<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, <span class="tsd-signature-symbol">...</span>rest<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/e5e76cc/src/Logger.ts#L108">Logger.ts:108</a></li>
+								<li>Defined in <a href="https://github.com/discord-sambo/logger/blob/5763660/src/Logger.ts#L109">Logger.ts:109</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2827,7 +2851,10 @@ img {
 								<h5>tag: <span class="tsd-signature-type">string</span></h5>
 							</li>
 							<li>
-								<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>text: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								<h5>data: <span class="tsd-signature-type">any</span></h5>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>rest: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
