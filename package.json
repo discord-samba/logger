@@ -1,23 +1,23 @@
 {
-	"name": "@discord-sambo/logger",
+	"name": "@discord-samba/logger",
 	"version": "0.1.0",
-	"description": "Logger module for Discord-Sambo",
+	"description": "Logger module for Discord-samba",
 	"main": "bin/index.js",
 	"scripts": {
 		"test": "jest --passWithNoTests"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/discord-sambo/logger.git"
+		"url": "git+https://github.com/discord-samba/logger.git"
 	},
 	"author": "Zack Campbell",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/discord-sambo/logger/issues"
+		"url": "https://github.com/discord-samba/logger/issues"
 	},
-	"homepage": "https://github.com/discord-sambo/logger#readme",
+	"homepage": "https://github.com/discord-samba/logger#readme",
 	"devDependencies": {
-		"@discord-sambo/eslint-config": "discord-sambo/eslint-config",
+		"@discord-samba/eslint-config": "discord-samba/eslint-config",
 		"@types/jest": "^24.0.18",
 		"@types/node": "^12.7.8",
 		"@typescript-eslint/eslint-plugin": "2.5.0",
@@ -35,7 +35,7 @@
 		"typescript": "^3.7.2"
 	},
 	"eslintConfig": {
-		"extends": "@discord-sambo"
+		"extends": "@discord-samba"
 	},
 	"jest": {
 		"roots": [
