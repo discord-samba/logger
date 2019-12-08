@@ -1,7 +1,7 @@
 {
 	"name": "@discord-samba/logger",
 	"version": "0.1.0",
-	"description": "Logger module for Discord-samba",
+	"description": "Logger module for Discord-Samba",
 	"main": "bin/index.js",
 	"scripts": {
 		"test": "jest --passWithNoTests"
