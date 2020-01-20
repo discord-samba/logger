@@ -2491,9 +2491,14 @@ img {
 				<div class="tsd-signature tsd-kind-icon">Constructable&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/discord-samba/logger/blob/f7348f7/src/types/Constructable.ts#L4">types/Constructable.ts:4</a></li>
+						<li>Defined in <a href="https://github.com/discord-samba/logger/blob/434ace4/src/types/Constructable.ts#L4">types/Constructable.ts:4</a></li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Represents any type possessing a constructor</p>
+					</div>
+				</div>
 				<h4 class="tsd-type-parameters-title">Type parameters</h4>
 				<ul class="tsd-type-parameters">
 					<li>
@@ -2513,16 +2518,28 @@ img {
 				<a name="loggable" class="tsd-anchor"></a>
 				<h3>Loggable</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">Loggable&lt;T&gt;<span class="tsd-signature-symbol">(</span>Base<span class="tsd-signature-symbol">: </span><a href="" class="tsd-signature-type">T</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="globals.html#constructable" class="tsd-signature-type">Constructable</a><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/loggableclass.html" class="tsd-signature-type">LoggableClass</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">T</span></li>
-					<li class="tsd-signature tsd-kind-icon">Loggable&lt;T&gt;<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, baseClass<span class="tsd-signature-symbol">: </span><a href="" class="tsd-signature-type">T</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="globals.html#constructable" class="tsd-signature-type">Constructable</a><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/proxyloggable.html" class="tsd-signature-type">ProxyLoggable</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">T</span></li>
+					<li class="tsd-signature tsd-kind-icon">Loggable&lt;T&gt;<span class="tsd-signature-symbol">(</span>Base<span class="tsd-signature-symbol">?: </span><a href="" class="tsd-signature-type">T</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="globals.html#constructable" class="tsd-signature-type">Constructable</a><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/loggableclass.html" class="tsd-signature-type">LoggableClass</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">T</span></li>
+					<li class="tsd-signature tsd-kind-icon">Loggable&lt;T&gt;<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, baseClass<span class="tsd-signature-symbol">?: </span><a href="" class="tsd-signature-type">T</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="globals.html#constructable" class="tsd-signature-type">Constructable</a><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/proxyloggable.html" class="tsd-signature-type">ProxyLoggable</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">T</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/f7348f7/src/Loggable.ts#L8">Loggable.ts:8</a></li>
+								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/434ace4/src/Loggable.ts#L8">Loggable.ts:8</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Classes that extend this mixin function will receive a public <code>logger</code> property
+									containing a reference to the Logger module, or to a tagged LoggerProxy depending
+								on whether or not a tag is provided.</p>
+							</div>
+							<p>A base class can be provided which will be extended including the mixin.</p>
+							<pre><code><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Loggable</span>(<span class="hljs-params"></span>) </span>{}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bar</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Loggable</span>(<span class="hljs-params"><span class="hljs-type">Baz</span></span>) </span>{}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Boo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Loggable</span>(<span class="hljs-params">'<span class="hljs-type">Boo</span>', <span class="hljs-type">Far</span></span>) </span>{}</code></pre><p><strong>NOTE:</strong> This is a function that returns a class, not a class itself. You must
+							call it like a function when using it in a <code>class extends</code> context</p>
+						</div>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
 						<ul class="tsd-type-parameters">
 							<li>
@@ -2543,9 +2560,21 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/f7348f7/src/Loggable.ts#L9">Loggable.ts:9</a></li>
+								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/434ace4/src/Loggable.ts#L9">Loggable.ts:9</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Classes that extend this mixin function will receive a public <code>logger</code> property
+									containing a reference to the Logger module, or to a tagged LoggerProxy depending
+								on whether or not a tag is provided.</p>
+							</div>
+							<p>A base class can be provided which will be extended including the mixin.</p>
+							<pre><code><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Loggable</span>(<span class="hljs-params"></span>) </span>{}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bar</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Loggable</span>(<span class="hljs-params"><span class="hljs-type">Baz</span></span>) </span>{}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Boo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Loggable</span>(<span class="hljs-params">'<span class="hljs-type">Boo</span>', <span class="hljs-type">Far</span></span>) </span>{}</code></pre><p><strong>NOTE:</strong> This is a function that returns a class, not a class itself. You must
+							call it like a function when using it in a <code>class extends</code> context</p>
+						</div>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
 						<ul class="tsd-type-parameters">
 							<li>
@@ -2579,9 +2608,30 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/f7348f7/src/LoggerDecorator.ts#L3">LoggerDecorator.ts:3</a></li>
+								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/434ace4/src/LoggerDecorator.ts#L3">LoggerDecorator.ts:3</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Property decorator that will assign a tagged Logger proxy to the decorated
+								property where the tag is the name of the parent class of the property</p>
+							</div>
+							<p>Example:</p>
+							<pre><code><span class="hljs-keyword">class</span> <span class="hljs-title">FooClass</span> {
+    @logger <span class="hljs-comment">// Logging methods will be tagged with `FooClass`</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> logger: <span class="hljs-keyword">typeof</span> Logger;
+    ...</code></pre><p>The decorator can be given a tag string to manually assign a different tag
+							instead</p>
+							<p>Example:</p>
+							<pre><code><span class="hljs-keyword">class</span> <span class="hljs-title">FooClass</span> {
+    @logger(<span class="hljs-string">'Bar'</span>) <span class="hljs-comment">// Logging methods will be tagged with `Bar`</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> logger: <span class="hljs-keyword">typeof</span> Logger;
+    ...</code></pre><blockquote>
+								<p><strong>Note:</strong> This is a Typescript feature. If using the logger is desired
+									in Javascript just call the static logging methods on Logger itself
+								<code>Logger.instance()</code></p>
+							</blockquote>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
@@ -2593,9 +2643,30 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/f7348f7/src/LoggerDecorator.ts#L4">LoggerDecorator.ts:4</a></li>
+								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/434ace4/src/LoggerDecorator.ts#L4">LoggerDecorator.ts:4</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Property decorator that will assign a tagged Logger proxy to the decorated
+								property where the tag is the name of the parent class of the property</p>
+							</div>
+							<p>Example:</p>
+							<pre><code><span class="hljs-keyword">class</span> <span class="hljs-title">FooClass</span> {
+    @logger <span class="hljs-comment">// Logging methods will be tagged with `FooClass`</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> logger: <span class="hljs-keyword">typeof</span> Logger;
+    ...</code></pre><p>The decorator can be given a tag string to manually assign a different tag
+							instead</p>
+							<p>Example:</p>
+							<pre><code><span class="hljs-keyword">class</span> <span class="hljs-title">FooClass</span> {
+    @logger(<span class="hljs-string">'Bar'</span>) <span class="hljs-comment">// Logging methods will be tagged with `Bar`</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> logger: <span class="hljs-keyword">typeof</span> Logger;
+    ...</code></pre><blockquote>
+								<p><strong>Note:</strong> This is a Typescript feature. If using the logger is desired
+									in Javascript just call the static logging methods on Logger itself
+								<code>Logger.instance()</code></p>
+							</blockquote>
+						</div>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
 						<ul class="tsd-type-parameters">
 							<li>

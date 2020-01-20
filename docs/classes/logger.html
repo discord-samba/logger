@@ -2513,7 +2513,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/f7348f7/src/Logger.ts#L10">Logger.ts:10</a></li>
+								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/434ace4/src/Logger.ts#L10">Logger.ts:10</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <a href="logger.html" class="tsd-signature-type">Logger</a></h4>
@@ -2527,15 +2527,26 @@ img {
 				<a name="adddefaulttransport" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagStatic">Static</span> add<wbr>Default<wbr>Transport</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<li class="tsd-signature tsd-kind-icon">add<wbr>Default<wbr>Transport<span class="tsd-signature-symbol">(</span>level<span class="tsd-signature-symbol">: </span><a href="../enums/loglevel.html" class="tsd-signature-type">LogLevel</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<li class="tsd-signature tsd-kind-icon">add<wbr>Default<wbr>Transport<span class="tsd-signature-symbol">(</span>level<span class="tsd-signature-symbol">?: </span><a href="../enums/loglevel.html" class="tsd-signature-type">LogLevel</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/f7348f7/src/Logger.ts#L45">Logger.ts:45</a></li>
+								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/434ace4/src/Logger.ts#L45">Logger.ts:45</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Adds the default transport to the cache. This must be called if you want
+									to use the logger without providing your own transports, otherwise nothing
+								will happen when you call the logger methods.</p>
+							</div>
+							<p>You could call this conditionally to turn Logging on or off, but the preferred
+							method for turning off logging would be <code>Logger.setLogLevel(LogLevel.NONE)</code></p>
+							<p>You can optionally provide a log level which will cause the default transport
+							to override the globally configured log level</p>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
@@ -2556,9 +2567,16 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/f7348f7/src/Logger.ts#L21">Logger.ts:21</a></li>
+								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/434ace4/src/Logger.ts#L21">Logger.ts:21</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Add a logger transport to the cache. Will be used whenever a logging
+									method is called. Key must be a string to identify the given transport
+								so that it may be removed if desired</p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
@@ -2576,15 +2594,20 @@ img {
 				<a name="debug" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagStatic">Static</span> debug</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<li class="tsd-signature tsd-kind-icon">debug<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, rest<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<li class="tsd-signature tsd-kind-icon">debug<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, <span class="tsd-signature-symbol">...</span>rest<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/f7348f7/src/Logger.ts#L125">Logger.ts:125</a></li>
+								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/434ace4/src/Logger.ts#L125">Logger.ts:125</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Log to all cached transports if the log level is &gt;= LogLevel.DEBUG</p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
@@ -2594,7 +2617,7 @@ img {
 								<h5>data: <span class="tsd-signature-type">any</span></h5>
 							</li>
 							<li>
-								<h5><span class="tsd-flag ts-flagRest">Rest</span> rest: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>rest: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -2605,15 +2628,20 @@ img {
 				<a name="error" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagStatic">Static</span> error</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<li class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, rest<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<li class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, <span class="tsd-signature-symbol">...</span>rest<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/f7348f7/src/Logger.ts#L117">Logger.ts:117</a></li>
+								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/434ace4/src/Logger.ts#L117">Logger.ts:117</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Log to all cached transports if the log level is &gt;= LogLevel.ERROR</p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
@@ -2623,7 +2651,7 @@ img {
 								<h5>data: <span class="tsd-signature-type">any</span></h5>
 							</li>
 							<li>
-								<h5><span class="tsd-flag ts-flagRest">Rest</span> rest: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>rest: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -2634,15 +2662,20 @@ img {
 				<a name="info" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagStatic">Static</span> info</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<li class="tsd-signature tsd-kind-icon">info<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, rest<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<li class="tsd-signature tsd-kind-icon">info<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, <span class="tsd-signature-symbol">...</span>rest<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/f7348f7/src/Logger.ts#L101">Logger.ts:101</a></li>
+								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/434ace4/src/Logger.ts#L101">Logger.ts:101</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Log to all cached transports if the log level is &gt;= LogLevel.INFO</p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
@@ -2652,7 +2685,7 @@ img {
 								<h5>data: <span class="tsd-signature-type">any</span></h5>
 							</li>
 							<li>
-								<h5><span class="tsd-flag ts-flagRest">Rest</span> rest: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>rest: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -2669,9 +2702,14 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/f7348f7/src/Logger.ts#L53">Logger.ts:53</a></li>
+								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/434ace4/src/Logger.ts#L53">Logger.ts:53</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Removes the default Logger transport from the logger cache</p>
+							</div>
+						</div>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 					</li>
 				</ul>
@@ -2686,9 +2724,14 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/f7348f7/src/Logger.ts#L29">Logger.ts:29</a></li>
+								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/434ace4/src/Logger.ts#L29">Logger.ts:29</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Removes the transport with the given key from the cache</p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
@@ -2709,9 +2752,14 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/f7348f7/src/Logger.ts#L61">Logger.ts:61</a></li>
+								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/434ace4/src/Logger.ts#L61">Logger.ts:61</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Sets the log level for logging</p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
@@ -2732,9 +2780,14 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/f7348f7/src/Logger.ts#L69">Logger.ts:69</a></li>
+								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/434ace4/src/Logger.ts#L69">Logger.ts:69</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Sets the shard number for this session</p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
@@ -2755,9 +2808,15 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/f7348f7/src/Logger.ts#L78">Logger.ts:78</a></li>
+								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/434ace4/src/Logger.ts#L78">Logger.ts:78</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Returns a tagged Logger proxy. All logging methods on the proxy
+								will use the given tag</p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
@@ -2772,15 +2831,20 @@ img {
 				<a name="warn" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagStatic">Static</span> warn</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<li class="tsd-signature tsd-kind-icon">warn<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, rest<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<li class="tsd-signature tsd-kind-icon">warn<span class="tsd-signature-symbol">(</span>tag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, <span class="tsd-signature-symbol">...</span>rest<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/f7348f7/src/Logger.ts#L109">Logger.ts:109</a></li>
+								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/434ace4/src/Logger.ts#L109">Logger.ts:109</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Log to all cached transports if the log level is &gt;= LogLevel.WARN</p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
@@ -2790,7 +2854,7 @@ img {
 								<h5>data: <span class="tsd-signature-type">any</span></h5>
 							</li>
 							<li>
-								<h5><span class="tsd-flag ts-flagRest">Rest</span> rest: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>rest: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
