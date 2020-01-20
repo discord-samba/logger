@@ -2,4 +2,16 @@
 This is the logger module for Discord-Samba. It provides a Logger utility that you may use for logging information.
 </p>
 
-TODO: Full write-up on the module
+## Installation
+The latest stable release of the module will always be available via the `@latest` tag on NPM:
+
+```
+npm install @discord-samba/logger@latest
+```
+
+Dev builds are published automatically after every commit to the `master` branch and are available
+via the `@dev` tag on NPM.
+
+```
+npm install @discord-samba/logger@dev
+```
