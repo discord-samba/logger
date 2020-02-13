@@ -8,7 +8,7 @@ import { LoggerTransport } from './LoggerTransport';
  * with `__` (That's two (2) underscores) as any base transports use those
  * keys for their metadata and you wouldn't want to overwrite those.
  *
- * All methods are static and will automatically use/create the singleton
+ * All methods are static and will automatically create/use the singleton
  * instance. You do not ever need to instantiate this class.
  */
 export class LoggerCache
@@ -18,7 +18,7 @@ export class LoggerCache
 
 	private _transports: Map<string, LoggerTransport>;
 
-	public constructor()
+	private constructor()
 	{
 		if (typeof LoggerCache._staticInstance !== 'undefined')
 			throw new Error('Cannot create multiple instances of LoggerCache');

@@ -1,6 +1,5 @@
 import { DefaultTransport } from './transports/DefaultTransport';
 import { LogLevel } from './types/LogLevel';
-import { LogType } from './types/LogType';
 import { LoggerCache } from './LoggerCache';
 import { LoggerCacheKeys } from './types/LoggerCacheKeys';
 import { LoggerProxy } from './types/LoggerProxy';
@@ -8,7 +7,7 @@ import { LoggerTransport } from './LoggerTransport';
 
 export class Logger
 {
-	public constructor()
+	private constructor()
 	{
 		throw new Error('Cannot instantiate Logger. Use the static logging methods');
 	}
@@ -100,7 +99,7 @@ export class Logger
 	 */
 	public static info(tag: string, data: any, ...rest: any[]): void
 	{
-		Logger._write(LogLevel.INFO, LogType.INFO, tag, [data, ...rest]);
+		Logger._write(LogLevel.INFO, tag, [data, ...rest]);
 	}
 
 	/**
@@ -108,7 +107,7 @@ export class Logger
 	 */
 	public static warn(tag: string, data: any, ...rest: any[]): void
 	{
-		Logger._write(LogLevel.WARN, LogType.WARN, tag, [data, ...rest]);
+		Logger._write(LogLevel.WARN, tag, [data, ...rest]);
 	}
 
 	/**
@@ -116,7 +115,7 @@ export class Logger
 	 */
 	public static error(tag: string, data: any, ...rest: any[]): void
 	{
-		Logger._write(LogLevel.ERROR, LogType.ERROR, tag, [data, ...rest]);
+		Logger._write(LogLevel.ERROR, tag, [data, ...rest]);
 	}
 
 	/**
@@ -124,15 +123,16 @@ export class Logger
 	 */
 	public static debug(tag: string, data: any, ...rest: any[]): void
 	{
-		Logger._write(LogLevel.DEBUG, LogType.DEBUG, tag, [data, ...rest]);
+		Logger._write(LogLevel.DEBUG, tag, [data, ...rest]);
 	}
 
 	/**
 	 * Write to all the cached transports
 	 */
-	private static _write(level: LogLevel, type: LogType, tag: string, data: any[]): void
+	private static _write(level: LogLevel, tag: string, data: any[]): void
 	{
 		const timestamp: Date = new Date();
+		const type: string = LogLevel[level];
 		for (const transport of LoggerCache.transports())
 			if (level <= transport.level)
 				transport.transport({ timestamp, type, tag, text: data.join(' ') });

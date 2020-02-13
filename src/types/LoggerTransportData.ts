@@ -1,5 +1,3 @@
-import { LogType } from './LogType';
-
 /**
  * Represents the data object a logger transport's transport
  * function will receive when it is called
@@ -7,7 +5,7 @@ import { LogType } from './LogType';
 export interface LoggerTransportData
 {
 	timestamp: Date;
-	type: LogType;
+	type: string;
 	tag: string;
 	text: string;
 }

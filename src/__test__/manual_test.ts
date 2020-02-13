@@ -8,7 +8,7 @@ import { LoggerProxy } from '../types/LoggerProxy';
 import { logger } from '../LoggerDecorator';
 
 Logger.addDefaultTransport();
-Logger.addTransport('fileLogger', new LogFileTransport(Path.join(__dirname, '../..', 'logs'), 7, LogLevel.INFO));
+Logger.addTransport('fileLogger', new LogFileTransport(Path.join(__dirname, '../../logs'), 7, LogLevel.DEBUG));
 
 const taggedLogger: LoggerProxy = Logger.tag('taggedLogger');
 Logger.setShard(1);
@@ -31,7 +31,7 @@ class TestClass
 }
 
 const test: TestClass = new TestClass();
-taggedLogger.info('bar', test as any);
+taggedLogger.info('bar', test);
 
 class Test
 {

@@ -6,6 +6,6 @@ export enum LoggerCacheKeys
 	DefaultTransport = '__default',
 	DefaultTransportTypeWidth = '__default_typeWidth',
 	DefaultTransportTagWidth = '__default_tagWidth',
-	FileLoggingTransportTypeWidth = '__fileLogger_typeWidth',
-	FileLoggingTransportTagWidth = '__fileLogger_tagWidth'
+	LogFileTransportTypeWidth = '__logFile_typeWidth',
+	LogFileTransportTagWidth = '__logFile_tagWidth'
 }

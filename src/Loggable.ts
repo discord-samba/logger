@@ -6,7 +6,7 @@ import { LoggerProxy } from './types/LoggerProxy';
 import { ProxyLoggable } from './types/ProxyLoggable';
 
 export function Loggable<T extends Constructable>(Base?: T): Constructable<LoggableClass> & T;
-export function Loggable<T extends Constructable>(tag: string, baseClass?: T): Constructable<ProxyLoggable> & T;
+export function Loggable<T extends Constructable>(tag: string, Base?: T): Constructable<ProxyLoggable> & T;
 
 /**
  * Classes that extend this mixin function will receive a public `logger` property
@@ -35,8 +35,8 @@ export function Loggable<T extends Constructable>(
 
 	return class extends Base
 	{
-		public readonly logger: typeof Logger | LoggerProxy = (typeof tag === 'string'
+		public readonly logger: typeof Logger | LoggerProxy = typeof tag === 'string'
 			? Logger.tag(tag)
-			: Logger);
+			: Logger;
 	} as Constructable<LoggableClass | ProxyLoggable> & T;
 }

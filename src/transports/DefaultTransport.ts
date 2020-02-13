@@ -1,4 +1,3 @@
-import { LogType } from '../types/LogType';
 import { LoggerCache } from '../LoggerCache';
 import { LoggerCacheKeys } from '../types/LoggerCacheKeys';
 import { LoggerTransport } from '../LoggerTransport';
@@ -26,10 +25,10 @@ export class DefaultTransport extends LoggerTransport
 	};
 
 	private static readonly _typeColorWrappers: { [type: string]: ColorWrapper } = {
-		[LogType.INFO]: DefaultTransport._createWrapper(DefaultTransport._colors.green),
-		[LogType.WARN]: DefaultTransport._createWrapper(DefaultTransport._colors.yellow),
-		[LogType.ERROR]: DefaultTransport._createWrapper(DefaultTransport._colors.red),
-		[LogType.DEBUG]: DefaultTransport._createWrapper(DefaultTransport._colors.magenta)
+		INFO: DefaultTransport._createWrapper(DefaultTransport._colors.green),
+		WARN: DefaultTransport._createWrapper(DefaultTransport._colors.yellow),
+		ERROR: DefaultTransport._createWrapper(DefaultTransport._colors.red),
+		DEBUG: DefaultTransport._createWrapper(DefaultTransport._colors.magenta)
 	};
 
 	/**
@@ -49,11 +48,11 @@ export class DefaultTransport extends LoggerTransport
 	}
 
 	/**
-	 * Pads the given number/string to 2 spaces with 0s and returns it
+	 * Pads the given number/string to `n` spaces with `0` and returns it
 	 */
-	private static _zeroPad(n: number | string): string
+	private static _zeroPad(value: number | string, n: number = 2): string
 	{
-		return `0${n}`.slice(-2);
+		return (typeof value === 'number' ? value.toString() : value).padStart(n, '0');
 	}
 
 	/**
@@ -65,7 +64,7 @@ export class DefaultTransport extends LoggerTransport
 			return '';
 
 		const shardVal: number = LoggerCache.get(LoggerCacheKeys.Shard);
-		const shardStr: string = shardVal < 10 ? DefaultTransport._zeroPad(shardVal) : shardVal.toString();
+		const shardStr: string = DefaultTransport._zeroPad(shardVal);
 		const shardTag: string = `[${DefaultTransport._wrapColor(DefaultTransport._colors.cyan, `SHARD_${shardStr}`)}]`;
 		return shardTag;
 	}

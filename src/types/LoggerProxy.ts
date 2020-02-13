@@ -2,7 +2,7 @@ import { LogLevel } from './LogLevel';
 import { LoggerTransport } from '../LoggerTransport';
 
 /**
- * Represents a tagged logger, ie. the logging methods will not accept a tag
+ * Represents a tagged logger, ie. the logging methods will not expect a tag
  * parameter because it has already been provided within the proxy. All other
  * methods remain the same
  */

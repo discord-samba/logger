@@ -38,6 +38,7 @@ export class LogFileTransport extends LoggerTransport
 
 	/**
 	 * Create a `YYYY-MM-DD` date string from the given time in milliseconds
+	 * @internal
 	 */
 	private static _createDateStr(time: number): string
 	{
@@ -54,6 +55,7 @@ export class LogFileTransport extends LoggerTransport
 	/**
 	 * Parses the date from the given `YYYY-MM-DD` string. We parse manually
 	 * here because Date 0-indexes the month but we store it with a 1-index
+	 * @internal
 	 */
 	private static _parseDateStr(date: string): number
 	{
@@ -73,6 +75,7 @@ export class LogFileTransport extends LoggerTransport
 	/**
 	 * Returns the given time (in milliseconds), rounded down to midnight
 	 * of the same day
+	 * @internal
 	 */
 	private static _roundTime(time: number): number
 	{
@@ -85,17 +88,19 @@ export class LogFileTransport extends LoggerTransport
 	}
 
 	/**
-	 * Pads the given number/string to 2 spaces with 0s and returns it
+	 * Pads the given number/string to `n` spaces with `0` and returns it
+	 * @internal
 	 */
-	private static _zeroPad(n: number | string): string
+	private static _zeroPad(value: number | string, n: number = 2): string
 	{
-		return `0${n}`.slice(-2);
+		return (typeof value === 'number' ? value.toString() : value).padStart(n, '0');
 	}
 
 	/**
 	 * Opens a log file for the current day (creating it if it doesn't exist)
 	 * and runs cleanup to remove any logs that fall outside the configured
 	 * number of days to keep
+	 * @internal
 	 */
 	private _newLog(): void
 	{
@@ -113,6 +118,7 @@ export class LogFileTransport extends LoggerTransport
 	/**
 	 * Iterates over log files in the logs directory and clean up any that
 	 * are older than the configured number of days to keep
+	 * @internal
 	 */
 	private async _cleanup(): Promise<void>
 	{
@@ -136,6 +142,7 @@ export class LogFileTransport extends LoggerTransport
 
 	/**
 	 * Returns the currently cached shard if any
+	 * @internal
 	 */
 	private static _shard(): string
 	{
@@ -143,7 +150,7 @@ export class LogFileTransport extends LoggerTransport
 			return '';
 
 		const shardVal: number = LoggerCache.get(LoggerCacheKeys.Shard);
-		const shardStr: string = shardVal < 10 ? LogFileTransport._zeroPad(shardVal) : shardVal.toString();
+		const shardStr: string = LogFileTransport._zeroPad(shardVal);
 		const shardTag: string = `[SHARD_${shardStr}]`;
 		return shardTag;
 	}
@@ -162,17 +169,17 @@ export class LogFileTransport extends LoggerTransport
 		const t: string = `${h}:${m}:${s}`;
 
 		// Set the highest type width we've encountered so far
-		if (type.length > LoggerCache.get(LoggerCacheKeys.FileLoggingTransportTypeWidth, 0))
-			LoggerCache.set(LoggerCacheKeys.FileLoggingTransportTypeWidth, type.length);
+		if (type.length > LoggerCache.get(LoggerCacheKeys.LogFileTransportTypeWidth, 0))
+			LoggerCache.set(LoggerCacheKeys.LogFileTransportTypeWidth, type.length);
 
 		// Set the highest tag width we've encountered so far
-		if (tag.length > LoggerCache.get(LoggerCacheKeys.FileLoggingTransportTagWidth, 0))
-			LoggerCache.set(LoggerCacheKeys.FileLoggingTransportTagWidth, tag.length);
+		if (tag.length > LoggerCache.get(LoggerCacheKeys.LogFileTransportTagWidth, 0))
+			LoggerCache.set(LoggerCacheKeys.LogFileTransportTagWidth, tag.length);
 
 		const wrappedType: string =
-			type.padEnd(LoggerCache.get(LoggerCacheKeys.FileLoggingTransportTypeWidth));
+			type.padEnd(LoggerCache.get(LoggerCacheKeys.LogFileTransportTypeWidth));
 
-		tag = tag.padEnd(LoggerCache.get(LoggerCacheKeys.FileLoggingTransportTagWidth));
+		tag = tag.padEnd(LoggerCache.get(LoggerCacheKeys.LogFileTransportTagWidth));
 
 		FS.appendFileSync(
 			this._fileDescriptor,
