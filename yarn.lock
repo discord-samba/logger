@@ -4364,9 +4364,9 @@ lunr@^2.3.8:
   integrity sha512-oxMeX/Y35PNFuZoHp+jUj5OSEmLCaIH4KTFJh7a93cHBoFmpw2IoPs22VIz7vyO2YUnx2Tn9dzIwO2P/4quIRg==
 
 madge@^3.5.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/madge/-/madge-3.6.0.tgz#f69e7c3e15a18a195e6bcd7942cc36efabcd9b9a"
-  integrity sha512-r4pCwKmihtzemQq8Y7edfkAKVKFqWU/AXTnDckwf1D4HOnX/uLAyWHQ+NgEo+FqBappi8wBzWJV5sFyQO2m6FQ==
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/madge/-/madge-3.8.0.tgz#c76538c1a8accda297009a25ceb8b29b20c99b86"
+  integrity sha512-bcX2QxiTwWvZrNM+XkmZY1SPl18C2HGaQGhroj3YzqSRxQ1ns7WXCYDyGCfZwp/uLibnNd6IOWrRLOkCS+lpAg==
   dependencies:
     chalk "^3.0.0"
     commander "^4.0.1"
