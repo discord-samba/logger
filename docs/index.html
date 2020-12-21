@@ -2434,7 +2434,8 @@ img {
 				<h2>Installation</h2>
 			</a>
 			<p>The latest stable release of the module will always be available via the <code>@latest</code> tag on NPM:</p>
-			<pre><code><span class="hljs-built_in">npm</span> install @discord-samba/logger@latest</code></pre><p>Dev builds are published automatically after every commit to the <code>master</code> branch and are available
+			<pre><code><span class="hljs-built_in">npm</span> install @discord-samba/logger@latest</code></pre>
+			<p>Dev builds are published automatically after every commit to the <code>master</code> branch and are available
 			via the <code>@dev</code> tag on NPM.</p>
 			<pre><code><span class="hljs-built_in">npm</span> install @discord-samba/logger@dev</code></pre>
 		</div>
@@ -2491,7 +2492,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">Constructable&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/discord-samba/logger/blob/a93b65d/src/types/Constructable.ts#L4">types/Constructable.ts:4</a></li>
+						<li>Defined in <a href="https://github.com/discord-samba/logger/blob/master/src/types/Constructable.ts#L4">src/types/Constructable.ts:4</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2525,7 +2526,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/a93b65d/src/Loggable.ts#L8">Loggable.ts:8</a></li>
+								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/master/src/Loggable.ts#L9">src/Loggable.ts:9</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2537,7 +2538,8 @@ img {
 							<p>A base class can be provided which will be extended including the mixin.</p>
 							<pre><code><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Loggable</span>(<span class="hljs-params"></span>) </span>{}
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bar</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Loggable</span>(<span class="hljs-params"><span class="hljs-type">Baz</span></span>) </span>{}
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Boo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Loggable</span>(<span class="hljs-params">'<span class="hljs-type">Boo</span>', <span class="hljs-type">Far</span></span>) </span>{}</code></pre><p><strong>NOTE:</strong> This is a function that returns a class, not a class itself. You must
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Boo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Loggable</span>(<span class="hljs-params">&#x27;<span class="hljs-type">Boo</span>&#x27;, <span class="hljs-type">Far</span></span>) </span>{}</code></pre>
+							<p><strong>NOTE:</strong> This is a function that returns a class, not a class itself. You must
 							call it like a function when using it in a <code>class extends</code> context</p>
 							<dl class="tsd-comment-tags">
 								<dt>mixin</dt>
@@ -2564,7 +2566,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/a93b65d/src/Loggable.ts#L9">Loggable.ts:9</a></li>
+								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/master/src/Loggable.ts#L10">src/Loggable.ts:10</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2576,7 +2578,8 @@ img {
 							<p>A base class can be provided which will be extended including the mixin.</p>
 							<pre><code><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Loggable</span>(<span class="hljs-params"></span>) </span>{}
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bar</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Loggable</span>(<span class="hljs-params"><span class="hljs-type">Baz</span></span>) </span>{}
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Boo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Loggable</span>(<span class="hljs-params">'<span class="hljs-type">Boo</span>', <span class="hljs-type">Far</span></span>) </span>{}</code></pre><p><strong>NOTE:</strong> This is a function that returns a class, not a class itself. You must
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Boo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Loggable</span>(<span class="hljs-params">&#x27;<span class="hljs-type">Boo</span>&#x27;, <span class="hljs-type">Far</span></span>) </span>{}</code></pre>
+							<p><strong>NOTE:</strong> This is a function that returns a class, not a class itself. You must
 							call it like a function when using it in a <code>class extends</code> context</p>
 							<dl class="tsd-comment-tags">
 								<dt>mixin</dt>
@@ -2616,7 +2619,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/a93b65d/src/LoggerDecorator.ts#L3">LoggerDecorator.ts:3</a></li>
+								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/master/src/LoggerDecorator.ts#L3">src/LoggerDecorator.ts:3</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2625,16 +2628,18 @@ img {
 								property where the tag is the name of the parent class of the property</p>
 							</div>
 							<p>Example:</p>
-							<pre><code><span class="hljs-keyword">class</span> <span class="hljs-title">FooClass</span> {
-    @logger <span class="hljs-comment">// Logging methods will be tagged with `FooClass`</span>
+							<pre><code><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FooClass</span> </span>{
+    <span class="hljs-meta">@logger</span> <span class="hljs-comment">// Logging methods will be tagged with `FooClass`</span>
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> logger: <span class="hljs-keyword">typeof</span> Logger;
-    ...</code></pre><p>The decorator can be given a tag string to manually assign a different tag
+    ...</code></pre>
+							<p>The decorator can be given a tag string to manually assign a different tag
 							instead</p>
 							<p>Example:</p>
-							<pre><code><span class="hljs-keyword">class</span> <span class="hljs-title">FooClass</span> {
-    @logger(<span class="hljs-string">'Bar'</span>) <span class="hljs-comment">// Logging methods will be tagged with `Bar`</span>
+							<pre><code><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FooClass</span> </span>{
+    <span class="hljs-meta">@logger</span>(<span class="hljs-string">&#x27;Bar&#x27;</span>) <span class="hljs-comment">// Logging methods will be tagged with `Bar`</span>
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> logger: <span class="hljs-keyword">typeof</span> Logger;
-    ...</code></pre><blockquote>
+    ...</code></pre>
+							<blockquote>
 								<p><strong>Note:</strong> This is a Typescript feature. If using the logger is desired
 									in Javascript just call the static logging methods on Logger itself
 								<code>Logger.instance()</code></p>
@@ -2651,7 +2656,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/a93b65d/src/LoggerDecorator.ts#L4">LoggerDecorator.ts:4</a></li>
+								<li>Defined in <a href="https://github.com/discord-samba/logger/blob/master/src/LoggerDecorator.ts#L4">src/LoggerDecorator.ts:4</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2660,16 +2665,18 @@ img {
 								property where the tag is the name of the parent class of the property</p>
 							</div>
 							<p>Example:</p>
-							<pre><code><span class="hljs-keyword">class</span> <span class="hljs-title">FooClass</span> {
-    @logger <span class="hljs-comment">// Logging methods will be tagged with `FooClass`</span>
+							<pre><code><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FooClass</span> </span>{
+    <span class="hljs-meta">@logger</span> <span class="hljs-comment">// Logging methods will be tagged with `FooClass`</span>
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> logger: <span class="hljs-keyword">typeof</span> Logger;
-    ...</code></pre><p>The decorator can be given a tag string to manually assign a different tag
+    ...</code></pre>
+							<p>The decorator can be given a tag string to manually assign a different tag
 							instead</p>
 							<p>Example:</p>
-							<pre><code><span class="hljs-keyword">class</span> <span class="hljs-title">FooClass</span> {
-    @logger(<span class="hljs-string">'Bar'</span>) <span class="hljs-comment">// Logging methods will be tagged with `Bar`</span>
+							<pre><code><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FooClass</span> </span>{
+    <span class="hljs-meta">@logger</span>(<span class="hljs-string">&#x27;Bar&#x27;</span>) <span class="hljs-comment">// Logging methods will be tagged with `Bar`</span>
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> logger: <span class="hljs-keyword">typeof</span> Logger;
-    ...</code></pre><blockquote>
+    ...</code></pre>
+							<blockquote>
 								<p><strong>Note:</strong> This is a Typescript feature. If using the logger is desired
 									in Javascript just call the static logging methods on Logger itself
 								<code>Logger.instance()</code></p>
