@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable max-classes-per-file, @typescript-eslint/no-extraneous-class */
-import { Constructable } from './types/Constructable';
-import { LoggableClass } from './types/LoggableClass';
-import { Logger } from './Logger';
-import { LoggerProxy } from './types/LoggerProxy';
-import { ProxyLoggable } from './types/ProxyLoggable';
+import { Constructable } from '#type/Constructable';
+import { LoggableClass } from '#type/LoggableClass';
+import { Logger } from '#root/Logger';
+import { LoggerProxy } from '#type/LoggerProxy';
+import { ProxyLoggable } from '#type/ProxyLoggable';
 
 export function Loggable<T extends Constructable>(Base?: T): Constructable<LoggableClass> & T;
 export function Loggable<T extends Constructable>(tag: string, Base?: T): Constructable<ProxyLoggable> & T;

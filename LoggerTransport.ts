@@ -1,7 +1,7 @@
-import { LogLevel } from './types/LogLevel';
-import { LoggerCache } from './LoggerCache';
-import { LoggerCacheKeys } from './types/LoggerCacheKeys';
-import { LoggerTransportData } from './types/LoggerTransportData';
+import { LogLevel } from '#type/LogLevel';
+import { LoggerCache } from '#root/LoggerCache';
+import { LoggerCacheKeys } from '#type/LoggerCacheKeys';
+import { LoggerTransportData } from '#type/LoggerTransportData';
 
 /**
  * The base abstract logger transport class that should be extended

@@ -1,6 +1,6 @@
-import { LogLevel } from './types/LogLevel';
-import { LoggerCacheKeys } from './types/LoggerCacheKeys';
-import { LoggerTransport } from './LoggerTransport';
+import { LogLevel } from '#type/LogLevel';
+import { LoggerCacheKeys } from '#type/LoggerCacheKeys';
+import { LoggerTransport } from '#root/LoggerTransport';
 
 /**
  * Cache singleton that can be used for caching logging related metadata

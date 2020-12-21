@@ -1,4 +1,4 @@
-import { Logger } from '../Logger';
+import { Logger } from '#root/Logger';
 
 /**
  * Represents a class that has a `logger` property containing a reference to

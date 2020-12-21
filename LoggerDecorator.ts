@@ -1,4 +1,4 @@
-import { Logger } from './Logger';
+import { Logger } from '#root/Logger';
 
 export function logger(key: string): PropertyDecorator;
 export function logger<T>(target: T, key: string): void;
