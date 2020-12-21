@@ -1,4 +1,4 @@
-import { LoggerProxy } from './LoggerProxy';
+import { LoggerProxy } from '#type/LoggerProxy';
 
 /**
  * Represents a class that has a `logger` property containing a LoggerProxy

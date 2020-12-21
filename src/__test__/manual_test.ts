@@ -1,11 +1,11 @@
 /* eslint-disable max-classes-per-file */
 import * as Path from 'path';
-import { LogFileTransport } from '../transports/LogFileTransport';
-import { LogLevel } from '../types/LogLevel';
-import { Loggable } from '../Loggable';
-import { Logger } from '../Logger';
-import { LoggerProxy } from '../types/LoggerProxy';
-import { logger } from '../LoggerDecorator';
+import { LogFileTransport } from '#transport/LogFileTransport';
+import { LogLevel } from '#type/LogLevel';
+import { Loggable } from '#root/Loggable';
+import { Logger } from '#root/Logger';
+import { LoggerProxy } from '#type/LoggerProxy';
+import { logger } from '#root/LoggerDecorator';
 
 Logger.addDefaultTransport();
 Logger.addTransport('fileLogger', new LogFileTransport(Path.join(__dirname, '../../logs'), 7, LogLevel.DEBUG));

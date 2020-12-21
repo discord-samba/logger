@@ -1,10 +1,10 @@
 import * as FS from 'fs';
 import * as Path from 'path';
-import { LogLevel } from '../types/LogLevel';
-import { LoggerCache } from '../LoggerCache';
-import { LoggerCacheKeys } from '../types/LoggerCacheKeys';
-import { LoggerTransport } from '../LoggerTransport';
-import { LoggerTransportData } from '../types/LoggerTransportData';
+import { LogLevel } from '#type/LogLevel';
+import { LoggerCache } from '#root/LoggerCache';
+import { LoggerCacheKeys } from '#type/LoggerCacheKeys';
+import { LoggerTransport } from '#root/LoggerTransport';
+import { LoggerTransportData } from '#type/LoggerTransportData';
 
 /**
  * Optional logger transport that logs to files in the given directory.

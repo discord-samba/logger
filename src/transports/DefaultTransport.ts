@@ -1,7 +1,7 @@
-import { LoggerCache } from '../LoggerCache';
-import { LoggerCacheKeys } from '../types/LoggerCacheKeys';
-import { LoggerTransport } from '../LoggerTransport';
-import { LoggerTransportData } from '../types/LoggerTransportData';
+import { LoggerCache } from '#root/LoggerCache';
+import { LoggerCacheKeys } from '#type/LoggerCacheKeys';
+import { LoggerTransport } from '#root/LoggerTransport';
+import { LoggerTransportData } from '#type/LoggerTransportData';
 
 /** @internal */
 type Color = [number, number];

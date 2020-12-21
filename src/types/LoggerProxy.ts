@@ -1,5 +1,5 @@
-import { LogLevel } from './LogLevel';
-import { LoggerTransport } from '../LoggerTransport';
+import { LogLevel } from '#type/LogLevel';
+import { LoggerTransport } from '#root/LoggerTransport';
 
 /**
  * Represents a tagged logger, ie. the logging methods will not expect a tag

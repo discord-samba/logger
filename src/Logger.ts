@@ -1,9 +1,9 @@
-import { DefaultTransport } from './transports/DefaultTransport';
-import { LogLevel } from './types/LogLevel';
-import { LoggerCache } from './LoggerCache';
-import { LoggerCacheKeys } from './types/LoggerCacheKeys';
-import { LoggerProxy } from './types/LoggerProxy';
-import { LoggerTransport } from './LoggerTransport';
+import { DefaultTransport } from '#transport/DefaultTransport';
+import { LogLevel } from '#type/LogLevel';
+import { LoggerCache } from '#root/LoggerCache';
+import { LoggerCacheKeys } from '#type/LoggerCacheKeys';
+import { LoggerProxy } from '#type/LoggerProxy';
+import { LoggerTransport } from '#root/LoggerTransport';
 
 export class Logger
 {
