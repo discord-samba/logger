@@ -3,7 +3,6 @@
 	"version": "0.1.0",
 	"description": "Logger module for Discord-Samba",
 	"main": "bin/index.js",
-	"typings": "bin/index.d.ts",
 	"imports": {
 		"#transport/*": "./bin/transports/*.js",
 		"#type/*": "./bin/types/*.js",
