@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/indent */
+
 /**
  * Represents the level of logging to be used at runtime
  */
